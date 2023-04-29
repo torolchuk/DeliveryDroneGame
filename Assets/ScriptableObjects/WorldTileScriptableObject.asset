@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a63fe2bd42db4ff2aebe137e49ab6a6, type: 3}
+  m_Name: WorldTileScriptableObject
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1189893314406336530, guid: 48b80dcf68f4f4943be1073f57c7a748, type: 3}
