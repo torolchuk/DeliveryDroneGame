@@ -11,6 +11,7 @@ namespace DeliveryDroneGame
         public Transform pickupPoint { get; private set; }
 
         private PickupItemController targetPickupItemController;
+        private PickupItemController currentlyPickedUpItem;
 
         private void Awake()
         {
@@ -19,10 +20,19 @@ namespace DeliveryDroneGame
 
         public void PickupItem()
         {
-            if (targetPickupItemController == null)
-                return;
+            if (currentlyPickedUpItem == null)
+            {
+                if (targetPickupItemController == null)
+                    return;
 
-            targetPickupItemController.SetCourierToFollow(this);
+                targetPickupItemController.SetCourierToFollow(this);
+                currentlyPickedUpItem = targetPickupItemController;
+            }
+            else
+            {
+                currentlyPickedUpItem.SetCourierToFollow(null);
+                currentlyPickedUpItem = null;
+            }
         }
 
         private void PickupColliderController_OnPickupItemCollide(object sender, PickupColliderController.OnPickupItemColledEventArgs e)

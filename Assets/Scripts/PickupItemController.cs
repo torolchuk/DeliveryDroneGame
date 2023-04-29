@@ -6,11 +6,18 @@ namespace DeliveryDroneGame
 {
     public class PickupItemController : MonoBehaviour
     {
+        [SerializeField]
+        private Rigidbody rigidbodyRef;
         private Transform followPointTransform;
+        private Vector3 positionCache;
+        private Vector3 targetPositionCache;
 
         public void SetCourierToFollow(CourierController courierController)
         {
-            followPointTransform = courierController.pickupPoint;
+            followPointTransform = courierController?.pickupPoint;
+
+            rigidbodyRef.useGravity = followPointTransform == null;
+            transform.parent = null;
         }
 
         private void Update()
@@ -23,8 +30,16 @@ namespace DeliveryDroneGame
             if (followPointTransform == null)
                 return;
 
-            Vector3 movementVector = Vector3.Normalize(transform.position - followPointTransform.position);
-            transform.position = transform.position + movementVector * 10 * Time.deltaTime;
+            targetPositionCache = followPointTransform.position;
+            positionCache = Vector3.MoveTowards(transform.position, targetPositionCache, 10f * Time.deltaTime);
+
+            transform.position = targetPositionCache;
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawSphere(positionCache, 1f);
+            //Gizmos.DrawSphere(targetPositionCache, 1.5f);
         }
     }
 }
