@@ -194,7 +194,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 12.54
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -220,7 +220,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0.6401094, y: 0, z: 0, w: 0.76828384}
-  m_LocalPosition: {x: 0, y: 19.43, z: 0.41}
+  m_LocalPosition: {x: 0, y: 99.5, z: -14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -646,7 +646,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852986313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 19.43, z: 0.41}
+  m_LocalPosition: {x: 0, y: 99.5, z: -14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 60
+    FieldOfView: 12.54
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -772,6 +772,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   worldTileScriptableObjects:
   - {fileID: 11400000, guid: cadeda2ec94584c99b7c7acf411fe9dd, type: 2}
+  tileSpawnPositionOffset: 50
+  prepopulateAmount: 5
 --- !u!1001 &456368826245713635
 PrefabInstance:
   m_ObjectHideFlags: 0

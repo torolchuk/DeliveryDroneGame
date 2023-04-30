@@ -17,6 +17,7 @@ namespace DeliveryDroneGame
             followPointTransform = courierController?.pickupPoint;
 
             rigidbodyRef.useGravity = followPointTransform == null;
+            rigidbodyRef.isKinematic = false;
             transform.parent = null;
         }
 
