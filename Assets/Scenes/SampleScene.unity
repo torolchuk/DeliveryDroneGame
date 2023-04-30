@@ -123,24 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &170482994 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7840719578449742029, guid: 70ef730dabfe2482093745e2e88acbee,
-    type: 3}
-  m_PrefabInstance: {fileID: 7840719579679138235}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &170482996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170482994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 369825ec74b0348729d8d7b222555b12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,7 +806,7 @@ MonoBehaviour:
   pickupItemsForSpawn: {fileID: 11400000, guid: 20ec2e8b32a7845ebb7bef5bcecb41c1,
     type: 2}
   tileSpawnPositionOffset: 50
-  prepopulateAmount: 5
+  prepopulateAmount: 2
 --- !u!1001 &456368826245713635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1010,6 +992,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 170482996, guid: 70ef730dabfe2482093745e2e88acbee, type: 3}
+      propertyPath: gameSpeedMultiplier
+      value: 
+      objectReference: {fileID: 11400000, guid: be9a2058f84644b4599088828e6ed5b6,
+        type: 2}
     - target: {fileID: 7840719578449742028, guid: 70ef730dabfe2482093745e2e88acbee,
         type: 3}
       propertyPath: m_RootOrder

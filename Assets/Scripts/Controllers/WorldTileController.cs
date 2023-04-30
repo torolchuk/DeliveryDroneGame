@@ -20,6 +20,8 @@ namespace DeliveryDroneGame
         private bool visualizeSpawnPoints = false;
         [SerializeField]
         private List<Vector2> possibleSpawnPoints;
+        [SerializeField]
+        private int maxActiveSpawnPoints = 8;
 
         private bool worldBoundaryEventWasSent = false;
         public event EventHandler OnEnterWorldsEndBoundary;
@@ -32,10 +34,15 @@ namespace DeliveryDroneGame
 
         public void Initialize(List<PickupItemScriptableObject> pickupItemsToSpawn)
         {
-            for (int i = 0; i < 10; i++)
+            int spawnIterations = Mathf.Min(maxActiveSpawnPoints, possibleSpawnPoints.Count - 1);
+            for (int i = 0; i < spawnIterations; i++)
             {
                 int randomSpawnPointIndex = UnityEngine.Random.Range(0, possibleSpawnPoints.Count - 1);
-                Vector3 spawnPosition = TranslateSpawnPointToLocalSpace(possibleSpawnPoints[randomSpawnPointIndex]);
+
+                Vector2 randomSpawnPointRef = possibleSpawnPoints[randomSpawnPointIndex];
+                possibleSpawnPoints.Remove(randomSpawnPointRef);
+
+                Vector3 spawnPosition = TranslateSpawnPointToLocalSpace(randomSpawnPointRef);
 
                 Instantiate(
                     SelectRandomPickupItem(pickupItemsToSpawn).prefab,

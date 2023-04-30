@@ -12,9 +12,9 @@ namespace DeliveryDroneGame
         private PickupItemListScriptableObject pickupItemsForSpawn;
 
         [SerializeField]
-        private float tileSpawnPositionOffset = 50f;
+        private float tileSpawnPositionOffset = 50;
         [SerializeField]
-        private int prepopulateAmount = 5;
+        private int prepopulateAmount = 2;
 
         private List<WorldTileController> activeWorldTiles;
 
