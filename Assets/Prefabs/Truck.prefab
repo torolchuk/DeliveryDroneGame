@@ -403,6 +403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9ecd56130264ba4b74fd0e62594a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  packagePickedupGameEvent: {fileID: 11400000, guid: 796af6aac3e1643b987d8980ab08fd80,
+    type: 2}
 --- !u!1 &7482857034376144123
 GameObject:
   m_ObjectHideFlags: 0

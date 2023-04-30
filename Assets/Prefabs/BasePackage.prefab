@@ -50,6 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbodyRef: {fileID: 5935708556914506919}
   movementSpeed: 10
+  <scriptableObject>k__BackingField: {fileID: 11400000, guid: 9b963e6f0c1ff4ae191f0687bfaa4a70,
+    type: 2}
 --- !u!65 &5968878216919514139
 BoxCollider:
   m_ObjectHideFlags: 0

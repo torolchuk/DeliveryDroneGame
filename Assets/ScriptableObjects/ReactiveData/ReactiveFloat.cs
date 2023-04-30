@@ -7,7 +7,7 @@ namespace DeliveryDroneGame.Utils
         fileName = "ReactiveFloat",
         menuName = "ScriptableObjects/ReactiveData/Float"
     )]
-    public class ReactiveFloat : AbstractReactiveData<int>
+    public class ReactiveFloat : AbstractReactiveData<float>
     {
     }
 }

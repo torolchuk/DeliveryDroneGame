@@ -10,6 +10,8 @@ namespace DeliveryDroneGame
         private Rigidbody rigidbodyRef;
         [SerializeField]
         private float movementSpeed = 5f;
+        [field: SerializeField]
+        public PickupItemScriptableObject scriptableObject { get; private set; }
 
         private Transform followPointTransform;
 

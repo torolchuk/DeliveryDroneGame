@@ -7,7 +7,7 @@ namespace DeliveryDroneGame.Utils
         fileName = "ReactiveInteger",
         menuName = "ScriptableObjects/ReactiveData/Integer"
     )]
-    public class ReactiveInteget : AbstractReactiveData<int>
+    public class ReactiveInteger : AbstractReactiveData<int>
     {
     }
 }
