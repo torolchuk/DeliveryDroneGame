@@ -32,16 +32,6 @@ namespace DeliveryDroneGame
             }
         }
 
-        private void ChildWorldTileController_OnEnterWorldsEndBoundary(object sender, System.EventArgs e)
-        {
-            WorldTileController worldTileController = sender as WorldTileController;
-            Destroy(worldTileController.gameObject);
-
-            SpawnNewWorldTile(
-                worldTileScriptableObjects[0].prefab, prepopulateAmount - 1
-            );
-        }
-
         private void SpawnNewWorldTile(GameObject prefab, int offset)
         {
             GameObject newTileGameObject =
@@ -57,6 +47,16 @@ namespace DeliveryDroneGame
 
             newWorldTileController.OnEnterWorldsEndBoundary += ChildWorldTileController_OnEnterWorldsEndBoundary;
 
+        }
+
+        private void ChildWorldTileController_OnEnterWorldsEndBoundary(object sender, System.EventArgs e)
+        {
+            WorldTileController worldTileController = sender as WorldTileController;
+            Destroy(worldTileController.gameObject);
+
+            SpawnNewWorldTile(
+                worldTileScriptableObjects[0].prefab, prepopulateAmount - 1
+            );
         }
     }
 }

@@ -50,11 +50,12 @@ namespace DeliveryDroneGame
 
         private void OnTriggerEnter(Collider other)
         {
-
             if (!other.gameObject.CompareTag(
                     GameTags.WorldsEnd.ToString()
                 ) || worldBoundaryEventWasSent)
                 return;
+
+            Debug.Log("Wiw");
 
             worldBoundaryEventWasSent = true;
             OnEnterWorldsEndBoundary?.Invoke(this, EventArgs.Empty);

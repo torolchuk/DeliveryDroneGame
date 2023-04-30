@@ -8,9 +8,10 @@ namespace DeliveryDroneGame
     {
         [SerializeField]
         private Rigidbody rigidbodyRef;
+        [SerializeField]
+        private float movementSpeed = 5f;
+
         private Transform followPointTransform;
-        private Vector3 positionCache;
-        private Vector3 targetPositionCache;
 
         public void SetCourierToFollow(CourierController courierController)
         {
@@ -31,16 +32,11 @@ namespace DeliveryDroneGame
             if (followPointTransform == null)
                 return;
 
-            targetPositionCache = followPointTransform.position;
-            positionCache = Vector3.MoveTowards(transform.position, targetPositionCache, 10f * Time.deltaTime);
-
-            transform.position = targetPositionCache;
-        }
-
-        private void OnDrawGizmos()
-        {
-            Gizmos.DrawSphere(positionCache, 1f);
-            //Gizmos.DrawSphere(targetPositionCache, 1.5f);
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                followPointTransform.position,
+                movementSpeed * Time.deltaTime
+            );
         }
     }
 }

@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbodyRef: {fileID: 5935708556914506919}
+  movementSpeed: 10
 --- !u!65 &5968878216919514139
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60,7 +61,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 2}
+  m_Size: {x: 1.2, y: 1, z: 1.2}
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!54 &5935708556914506919
 Rigidbody:
@@ -105,7 +106,7 @@ Transform:
   m_GameObject: {fileID: 7560629072469966865}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1.029, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7560629072320595570}
