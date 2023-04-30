@@ -15,12 +15,15 @@ namespace DeliveryDroneGame
         private void Awake()
         {
             deliveryOrdersList.Subscribe(HandleDeliveryOrderUpdate);
-
-            //HandleDeliveryOrderUpdate();
         }
 
         private void HandleDeliveryOrderUpdate()
         {
+            foreach (Transform child in transform)
+            {
+                Destroy(child.gameObject);
+            }
+
             Debug.Log(deliveryOrdersList.GetValue());
             foreach (PickupItemScriptableObject pickupItem in deliveryOrdersList.GetValue())
             {

@@ -7,6 +7,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3113863782005927166, guid: d9ab53ee2b1d64ca684af85ea9ebaa02,
+        type: 3}
+      propertyPath: <scriptableObject>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: c95b0fff685144a2b9bb4dbcbadc953a,
+        type: 2}
     - target: {fileID: 7560629072320595569, guid: d9ab53ee2b1d64ca684af85ea9ebaa02,
         type: 3}
       propertyPath: m_Name
