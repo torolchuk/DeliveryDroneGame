@@ -56,7 +56,6 @@ namespace DeliveryDroneGame
         private PickupItemScriptableObject SelectRandomPickupItem(List<PickupItemScriptableObject> pickupItemList)
         {
             int randomItemIndex = UnityEngine.Random.Range(0, pickupItemList.Count);
-            Debug.LogFormat("Index: {0} of {1}", randomItemIndex, pickupItemList.Count);
             return pickupItemList[randomItemIndex];
         }
 
@@ -66,8 +65,6 @@ namespace DeliveryDroneGame
                     GameTags.WorldsEnd.ToString()
                 ) || worldBoundaryEventWasSent)
                 return;
-
-            Debug.Log("Wiw");
 
             worldBoundaryEventWasSent = true;
             OnEnterWorldsEndBoundary?.Invoke(this, EventArgs.Empty);

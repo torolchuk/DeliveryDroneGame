@@ -12,15 +12,35 @@ namespace DeliveryDroneGame
         private ReactiveFloat gameSpeedMultiplier;
         [SerializeField]
         private ReactiveInteger score;
+        [SerializeField]
+        private ReactivePickupItemList deliveryOrders;
 
         [Header("Game events")]
         [SerializeField]
         private ItemPickupGameEvent itemPickedupGameEvent;
 
+        [Header("Game configurations")]
+        [SerializeField]
+        private PickupItemListScriptableObject pickupItemsAllowedToDeliver;
+
         private void Awake()
         {
             SetInitialGameState();
             itemPickedupGameEvent.eventHandler += ItemPickedupGameEvent_eventHandler;
+
+            List<PickupItemScriptableObject> newDeliveryList = new List<PickupItemScriptableObject>();
+            for (int i = 0; i < 4; i++)
+            {
+                PickupItemScriptableObject randomPickupItem =
+                    pickupItemsAllowedToDeliver
+                        .pickupItems[UnityEngine.Random.Range(0, pickupItemsAllowedToDeliver.pickupItems.Count)];
+
+                newDeliveryList.Add(randomPickupItem);
+            }
+
+            deliveryOrders.SetValue(
+                newDeliveryList
+            );
         }
 
         private void Update()

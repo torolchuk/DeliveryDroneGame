@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using DeliveryDroneGame.Utils;
+using System;
 
 namespace DeliveryDroneGame.Utils
 {
@@ -10,6 +11,7 @@ namespace DeliveryDroneGame.Utils
     )]
     public class ReactivePickupItemList : AbstractComplexReactiveData<List<PickupItemScriptableObject>>
     {
+
     }
 }
 
