@@ -8,6 +8,8 @@ namespace DeliveryDroneGame
     {
         [SerializeField]
         private List<WorldTileScriptableObject> worldTileScriptableObjects;
+        [SerializeField]
+        private PickupItemListScriptableObject pickupItemsForSpawn;
 
         [SerializeField]
         private float tileSpawnPositionOffset = 50f;
@@ -43,7 +45,7 @@ namespace DeliveryDroneGame
                 );
 
             WorldTileController newWorldTileController = newTileGameObject.GetComponent<WorldTileController>();
-            newWorldTileController.Initialize();
+            newWorldTileController.Initialize(pickupItemsForSpawn.pickupItems);
 
             newWorldTileController.OnEnterWorldsEndBoundary += ChildWorldTileController_OnEnterWorldsEndBoundary;
 

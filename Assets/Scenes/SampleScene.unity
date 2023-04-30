@@ -404,7 +404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: b241f91b9ccf8ff489abf204b30d3112, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 0.1
+  m_AmplitudeGain: 0.01
   m_FrequencyGain: 1
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &410087039
@@ -436,7 +436,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9622642, g: 0.9576725, b: 0.94864726, a: 1}
   m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
@@ -480,7 +480,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 4176
+  m_ColorTemperature: 5603
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -821,6 +821,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   worldTileScriptableObjects:
   - {fileID: 11400000, guid: cadeda2ec94584c99b7c7acf411fe9dd, type: 2}
+  pickupItemsForSpawn: {fileID: 11400000, guid: 20ec2e8b32a7845ebb7bef5bcecb41c1,
+    type: 2}
   tileSpawnPositionOffset: 50
   prepopulateAmount: 5
 --- !u!1001 &456368826245713635

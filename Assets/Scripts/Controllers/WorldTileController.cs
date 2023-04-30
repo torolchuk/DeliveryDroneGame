@@ -20,8 +20,6 @@ namespace DeliveryDroneGame
         private bool visualizeSpawnPoints = false;
         [SerializeField]
         private List<Vector2> possibleSpawnPoints;
-        [SerializeField]
-        private List<PickupItemScriptableObject> pickupItemScriptableObjects;
 
         private bool worldBoundaryEventWasSent = false;
         public event EventHandler OnEnterWorldsEndBoundary;
@@ -32,20 +30,27 @@ namespace DeliveryDroneGame
             transform.position += -Vector3.forward * Time.deltaTime * movementSpeed;
         }
 
-        public void Initialize()
+        public void Initialize(List<PickupItemScriptableObject> pickupItemsToSpawn)
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 10; i++)
             {
                 int randomSpawnPointIndex = UnityEngine.Random.Range(0, possibleSpawnPoints.Count - 1);
                 Vector3 spawnPosition = TranslateSpawnPointToLocalSpace(possibleSpawnPoints[randomSpawnPointIndex]);
 
                 Instantiate(
-                    pickupItemScriptableObjects[0].prefab,
+                    SelectRandomPickupItem(pickupItemsToSpawn).prefab,
                     spawnPosition,
                     Quaternion.identity,
                     transform
                 );
             }
+        }
+
+        private PickupItemScriptableObject SelectRandomPickupItem(List<PickupItemScriptableObject> pickupItemList)
+        {
+            int randomItemIndex = UnityEngine.Random.Range(0, pickupItemList.Count);
+            Debug.LogFormat("Index: {0} of {1}", randomItemIndex, pickupItemList.Count);
+            return pickupItemList[randomItemIndex];
         }
 
         private void OnTriggerEnter(Collider other)
