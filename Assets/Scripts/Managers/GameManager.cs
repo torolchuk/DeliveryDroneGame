@@ -33,6 +33,8 @@ namespace DeliveryDroneGame
         [SerializeField]
         private PickupItemListScriptableObject pickupItemsAllowedToDeliver;
 
+        public event EventHandler<GameStateSoundController.SoundType> GameStateSoundTrigger;
+
         private void Awake()
         {
             SetInitialGameState();
@@ -87,6 +89,7 @@ namespace DeliveryDroneGame
                     fuelCapacity.GetValue() + .2f,
                     0, 1
                 ));
+                GameStateSoundTrigger.Invoke(this, GameStateSoundController.SoundType.FuelRestored);
 
                 return;
             }
@@ -98,11 +101,6 @@ namespace DeliveryDroneGame
             {
                 if (currentDeliveryOrders[i].pickupItemType == e.pickupItemType)
                 {
-                    Debug.LogFormat(
-                        "TYPE A: {0}, TYPE B: {1}",
-                        currentDeliveryOrders[i].pickupItemType.ToString(),
-                        e.pickupItemType.ToString()
-                    );
                     float newComboMultiplier = i != 0 ? 1 : comboMultiplier.GetValue() + COMBO_MULTIPLIER_STEP;
                     comboMultiplier.SetValue(newComboMultiplier);
                     float scoreWin = SCORE_PER_DELIVERY * comboMultiplier.GetValue();
@@ -113,9 +111,12 @@ namespace DeliveryDroneGame
                         .pickupItems[UnityEngine.Random.Range(0, pickupItemsAllowedToDeliver.pickupItems.Count)]);
 
                     deliveryOrders.SetValue(currentDeliveryOrders);
+                    GameStateSoundTrigger.Invoke(this, i == 0 ? GameStateSoundController.SoundType.DeliveryPerfect : GameStateSoundController.SoundType.DeliveryNotPerfect);
                     return;
                 }
             }
+
+            GameStateSoundTrigger.Invoke(this, GameStateSoundController.SoundType.DeliveryFailed);
 
             comboMultiplier.SetValue(1);
         }

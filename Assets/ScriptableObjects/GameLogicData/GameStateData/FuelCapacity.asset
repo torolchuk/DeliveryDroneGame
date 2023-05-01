@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 538239ed9897e49369c4bb7bf8fa5604, type: 3}
   m_Name: FuelCapacity
   m_EditorClassIdentifier: 
-  _value: 0.9991777
+  _value: 0
