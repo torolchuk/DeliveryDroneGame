@@ -66,12 +66,9 @@ namespace DeliveryDroneGame
                 0
             );
 
-            Debug.Log("_______");
-            Debug.Log(motorTiltValue);
             foreach (Transform motor in motorList)
             {
                 motor.localEulerAngles = motorTiltValue;
-                Debug.Log(motor.eulerAngles);
             }
         }
 

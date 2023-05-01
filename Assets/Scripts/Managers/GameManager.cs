@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DeliveryDroneGame.Utils;
@@ -19,10 +20,14 @@ namespace DeliveryDroneGame
         private ReactiveFloat comboMultiplier;
         [SerializeField]
         private ReactivePickupItemList deliveryOrders;
+        [SerializeField]
+        private ReactiveFloat fuelCapacity;
 
         [Header("Game events")]
         [SerializeField]
         private ItemPickupGameEvent itemPickedupGameEvent;
+        [SerializeField]
+        private EmptyGameEvent fuelEndedGameEvent;
 
         [Header("Game configurations")]
         [SerializeField]
@@ -53,11 +58,23 @@ namespace DeliveryDroneGame
             gameSpeedMultiplier.SetValue(
                 gameSpeedMultiplier.GetValue() + Time.deltaTime / 100
             );
+
+            fuelCapacity.SetValue(
+                fuelCapacity.GetValue() - (gameSpeedMultiplier.GetValue() - 1f) / 1000f
+            );
+
+            if (fuelCapacity.GetValue() == 0f)
+            {
+                fuelEndedGameEvent.Invoke(this, EventArgs.Empty);
+                gameSpeedMultiplier.SetValue(0f);
+            }
         }
 
         private void SetInitialGameState()
         {
             gameSpeedMultiplier.SetValue(1f);
+            comboMultiplier.SetValue(1f);
+            fuelCapacity.SetValue(1f);
             score.SetValue(0);
         }
 
