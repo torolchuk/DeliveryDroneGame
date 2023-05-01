@@ -2798,6 +2798,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundTile_1
       objectReference: {fileID: 0}
+    - target: {fileID: 3808285788996798272, guid: 882e4af7c4da545b18ced498a2710b3e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6708266236810611791, guid: 882e4af7c4da545b18ced498a2710b3e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922638233348424403, guid: 882e4af7c4da545b18ced498a2710b3e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 882e4af7c4da545b18ced498a2710b3e, type: 3}
 --- !u!1 &2103182284
