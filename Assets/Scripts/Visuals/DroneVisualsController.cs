@@ -62,7 +62,7 @@ namespace DeliveryDroneGame
 
             Vector3 motorTiltValue = new Vector3(
                 tiltVector.y * maxTiltAngle,
-                -tiltVector.x * maxTiltAngle,
+                tiltVector.x * maxTiltAngle,
                 0
             );
 
