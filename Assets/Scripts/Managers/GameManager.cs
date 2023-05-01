@@ -28,6 +28,8 @@ namespace DeliveryDroneGame
         private ItemPickupGameEvent itemPickedupGameEvent;
         [SerializeField]
         private EmptyGameEvent fuelEndedGameEvent;
+        [SerializeField]
+        private EmptyGameEvent pickupItemLostGameEvent;
 
         [Header("Game configurations")]
         [SerializeField]
@@ -39,6 +41,7 @@ namespace DeliveryDroneGame
         {
             SetInitialGameState();
             itemPickedupGameEvent.eventHandler += HandleItemPickedupGameEvent;
+            pickupItemLostGameEvent.eventHandler += HandlePickupItemLostGameEvent;
 
             List<PickupItemScriptableObject> newDeliveryList = new List<PickupItemScriptableObject>();
             for (int i = 0; i < 4; i++)
@@ -119,6 +122,12 @@ namespace DeliveryDroneGame
             GameStateSoundTrigger.Invoke(this, GameStateSoundController.SoundType.DeliveryFailed);
 
             comboMultiplier.SetValue(1);
+        }
+
+        private void HandlePickupItemLostGameEvent(object sender, object e)
+        {
+            comboMultiplier.SetValue(0f);
+            GameStateSoundTrigger.Invoke(this, GameStateSoundController.SoundType.DeliveryFailed);
         }
     }
 }

@@ -923,7 +923,7 @@ GameObject:
   - component: {fileID: 816857557}
   - component: {fileID: 816857556}
   m_Layer: 5
-  m_Name: Score Title (3)
+  m_Name: Thanks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c940dc753a4c64e0dae5bd2b8cdd139d, type: 3}
-  m_Name: Score
-  m_EditorClassIdentifier: Assembly-CSharp::ReactiveInteget
-  _value: 250
+  m_Script: {fileID: 11500000, guid: 8f9a18f07d8324cddb1d47d39d26f57c, type: 3}
+  m_Name: PickupItemLost
+  m_EditorClassIdentifier: 

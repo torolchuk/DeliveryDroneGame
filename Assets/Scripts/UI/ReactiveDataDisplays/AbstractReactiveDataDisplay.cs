@@ -24,18 +24,17 @@ namespace DeliveryDroneGame.Utils
         private void Awake()
         {
             valueRef.Subscribe(HandleValueChange);
+            HandleValueChange();
         }
 
         private void Start()
         {
-            UpdateText();
+            HandleValueChange();
         }
 
         void HandleValueChange()
         {
             ValueType updatedValue = valueRef.GetValue();
-            if (updatedValue.Equals(_valueCache))
-                return;
             _valueCache = updatedValue;
 
             UpdateText();

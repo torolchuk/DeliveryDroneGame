@@ -2059,6 +2059,8 @@ MonoBehaviour:
   itemPickedupGameEvent: {fileID: 11400000, guid: 796af6aac3e1643b987d8980ab08fd80,
     type: 2}
   fuelEndedGameEvent: {fileID: 11400000, guid: 35043a9b9dc754c8ab12d08b9a71b2e0, type: 2}
+  pickupItemLostGameEvent: {fileID: 11400000, guid: 03ad5e8c17c73416ea5149b2906fb699,
+    type: 2}
   pickupItemsAllowedToDeliver: {fileID: 11400000, guid: 19eae0ab281834e4a86a8a0ab31b3bae,
     type: 2}
 --- !u!4 &1646197089
@@ -2437,7 +2439,7 @@ MonoBehaviour:
   pickupItemsForSpawn: {fileID: 11400000, guid: 20ec2e8b32a7845ebb7bef5bcecb41c1,
     type: 2}
   tileSpawnPositionOffset: 50
-  prepopulateAmount: 2
+  prepopulateAmount: 3
 --- !u!1 &1987830160
 GameObject:
   m_ObjectHideFlags: 0

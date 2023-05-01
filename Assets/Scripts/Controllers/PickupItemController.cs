@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,8 @@ namespace DeliveryDroneGame
         public PickupItemScriptableObject scriptableObject { get; private set; }
         [SerializeField]
         private float timeToSelfDestroy = 2f;
+        [SerializeField]
+        private EmptyGameEvent pickupItemLostGameEvent;
 
         private Transform followPointTransform;
 
@@ -78,6 +81,7 @@ namespace DeliveryDroneGame
         {
             currentState = State.SelfDestruction;
             yield return new WaitForSeconds(timeToSelfDestroy);
+            pickupItemLostGameEvent.Invoke(this, EventArgs.Empty);
             Destroy(gameObject);
         }
     }
