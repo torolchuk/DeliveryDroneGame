@@ -7,7 +7,8 @@ namespace DeliveryDroneGame.Utils
         SquarePackage,
         CirclePackage,
         CrossPackage,
-        TriaglePackage
+        TriaglePackage,
+        Fuel
     }
 }
 

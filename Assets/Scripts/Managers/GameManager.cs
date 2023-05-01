@@ -80,6 +80,16 @@ namespace DeliveryDroneGame
 
         private void HandleItemPickedupGameEvent(object sender, PickupItemScriptableObject e)
         {
+            if (e.pickupItemType == PickupItemType.Fuel)
+            {
+                fuelCapacity.SetValue(Mathf.Clamp(
+                    fuelCapacity.GetValue() + .2f,
+                    0, 1
+                ));
+
+                return;
+            }
+
             List<PickupItemScriptableObject> currentDeliveryOrders =
                 new List<PickupItemScriptableObject>(deliveryOrders.GetValue());
 
