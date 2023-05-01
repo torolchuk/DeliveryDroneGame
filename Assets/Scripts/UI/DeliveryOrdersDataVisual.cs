@@ -31,5 +31,10 @@ namespace DeliveryDroneGame
                 newIconTransform.GetComponent<ImageDisplayUIController>().SetSprite(pickupItem.uiIcon);
             }
         }
+
+        private void OnDestroy()
+        {
+            deliveryOrdersList.Unsubscribe(HandleDeliveryOrderUpdate);
+        }
     }
 }

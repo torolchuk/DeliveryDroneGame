@@ -51,5 +51,10 @@ namespace DeliveryDroneGame.Utils
             string updatedText = ComposeTextToDisplay();
             textMeshPro.SetText(updatedText);
         }
+
+        private void OnDestroy()
+        {
+            valueRef.Unsubscribe(HandleValueChange);
+        }
     }
 }

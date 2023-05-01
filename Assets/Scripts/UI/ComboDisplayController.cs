@@ -25,5 +25,10 @@ namespace DeliveryDroneGame
 
             gameObject.SetActive(displayUI);
         }
+
+        private void OnDestroy()
+        {
+            comboMultiplier.Unsubscribe(HandleComboMultiplierUpdate);
+        }
     }
 }

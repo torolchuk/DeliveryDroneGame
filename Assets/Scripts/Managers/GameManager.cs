@@ -60,13 +60,14 @@ namespace DeliveryDroneGame
             );
 
             fuelCapacity.SetValue(
-                fuelCapacity.GetValue() - (gameSpeedMultiplier.GetValue() - 1f) / 1000f
+                Mathf.Max(fuelCapacity.GetValue() - (gameSpeedMultiplier.GetValue() - 1f) / 1000f, 0f)
             );
 
-            if (fuelCapacity.GetValue() == 0f)
+            if (fuelCapacity.GetValue() <= 0f)
             {
                 fuelEndedGameEvent.Invoke(this, EventArgs.Empty);
                 gameSpeedMultiplier.SetValue(0f);
+                Loader.Load(Loader.Scene.GameOver);
             }
         }
 

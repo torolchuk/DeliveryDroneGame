@@ -31,5 +31,10 @@ namespace DeliveryDroneGame
 
             image.fillAmount = normalizedValue;
         }
+
+        private void OnDestroy()
+        {
+            reactiveFloat.Unsubscribe(HandleReactiveFloatUpdate);
+        }
     }
 }
