@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 namespace DeliveryDroneGame
 {
@@ -12,6 +13,8 @@ namespace DeliveryDroneGame
 
         private PickupItemController targetPickupItemController;
         private PickupItemController currentlyPickedUpItem;
+
+        public event EventHandler OnPickupItemUpdateEvent;
 
         private void Awake()
         {
@@ -33,11 +36,18 @@ namespace DeliveryDroneGame
                 currentlyPickedUpItem.SetCourierToFollow(null);
                 currentlyPickedUpItem = null;
             }
+
+            OnPickupItemUpdateEvent.Invoke(this, EventArgs.Empty);
         }
 
         private void PickupColliderController_OnPickupItemCollide(object sender, PickupColliderController.OnPickupItemColledEventArgs e)
         {
             targetPickupItemController = e.pickupItemController;
+        }
+
+        public PickupItemScriptableObject GetCurrentPickupItemInfo()
+        {
+            return currentlyPickedUpItem?.scriptableObject;
         }
     }
 }
