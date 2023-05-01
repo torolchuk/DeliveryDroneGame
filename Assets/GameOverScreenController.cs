@@ -20,7 +20,14 @@ namespace DeliveryDroneGame
         {
             playAgainButton.onClick.AddListener(HandlePlayAgainButtonClick);
             mainMenuButton.onClick.AddListener(HandleMainMenuButtonClick);
-            playAgainButton.onClick.AddListener(HandleExitButtonClick);
+            exitButton.onClick.AddListener(HandleExitButtonClick);
+        }
+
+        private void OnDestroy()
+        {
+            playAgainButton.onClick.RemoveAllListeners();
+            mainMenuButton.onClick.RemoveAllListeners();
+            exitButton.onClick.RemoveAllListeners();
         }
 
         private void HandlePlayAgainButtonClick()

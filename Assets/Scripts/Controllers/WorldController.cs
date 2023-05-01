@@ -29,17 +29,19 @@ namespace DeliveryDroneGame
             {
                 SpawnNewWorldTile(
                     worldTileScriptableObjects[0].prefab,
-                    i
+                    i,
+                    Vector3.zero
                 );
             }
         }
 
-        private void SpawnNewWorldTile(GameObject prefab, int offset)
+        private void SpawnNewWorldTile(GameObject prefab, int offset, Vector3 vectorOffset)
         {
+            Vector3 position = (Vector3.forward * offset * tileSpawnPositionOffset) + vectorOffset;
             GameObject newTileGameObject =
                 Instantiate(
                     prefab,
-                    Vector3.forward * offset * tileSpawnPositionOffset,
+                    position,
                     Quaternion.identity,
                     transform
                 );
@@ -57,7 +59,7 @@ namespace DeliveryDroneGame
             Destroy(worldTileController.gameObject);
 
             SpawnNewWorldTile(
-                worldTileScriptableObjects[0].prefab, prepopulateAmount - 1
+                worldTileScriptableObjects[0].prefab, prepopulateAmount, worldTileController.transform.position
             );
         }
     }
