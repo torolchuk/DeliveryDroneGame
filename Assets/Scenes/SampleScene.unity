@@ -2369,6 +2369,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone Object
       objectReference: {fileID: 0}
+    - target: {fileID: 3827372397507224492, guid: cd3cf1f26f591472ba3523143cc6577d,
+        type: 3}
+      propertyPath: movementSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6337491608024162073, guid: cd3cf1f26f591472ba3523143cc6577d,
         type: 3}
       propertyPath: m_WasSpriteAssigned

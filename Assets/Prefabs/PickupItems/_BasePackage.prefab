@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbodyRef: {fileID: 5935708556914506919}
-  movementSpeed: 10
+  movementSpeed: 14
   <scriptableObject>k__BackingField: {fileID: 11400000, guid: 9b963e6f0c1ff4ae191f0687bfaa4a70,
     type: 2}
   timeToSelfDestroy: 1.5
