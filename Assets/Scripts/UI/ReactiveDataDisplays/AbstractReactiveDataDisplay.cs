@@ -24,6 +24,10 @@ namespace DeliveryDroneGame.Utils
         private void Awake()
         {
             valueRef.Subscribe(HandleValueChange);
+        }
+
+        private void Start()
+        {
             UpdateText();
         }
 
