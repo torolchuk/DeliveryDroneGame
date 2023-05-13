@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace DeliveryDroneGame
 {
-    public class LoadingSceneController : MonoBehaviour
+    public class LoadingScreneController : MonoBehaviour
     {
         private void Start()
         {

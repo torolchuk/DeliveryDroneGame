@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace DeliveryDroneGame
 {
-    public class MainMenuController : MonoBehaviour
+    public class MainMenuScreenController : MonoBehaviour
     {
         [SerializeField]
         private Button playButton;
